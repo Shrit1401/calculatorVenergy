@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <!-- Calc 1 -->
+      <div
+        class="calculator"
+        onkeyup="Calc_1()"
+        onmousemove="updateGlobals_1()"
+      >
+        <div class="description-section">
+          <h2>Calculate your NRA using NMA</h2>
+          <p class="calc-p calc-1">
+            A Net Royalty Acre is a Net Mineral Acres that is subject to an oil,
+            gas, and mineral lease and has a royalty percentage granted and
+            provided for within that lease.
+          </p>
+        </div>
+        <div class="input-section">
+          <label for="NMA_1"
+            >Net Mineral Acres (NMA)
+            <span class="tooltiphoverable"
+              >ⓘ<span class="tooltiptext"
+                >Use any of the "Calculate Net Mineral Acres (NMA)</span
+              ></span
+            ></label
+          >
+          <input type="number" id="NMA_1" maxlength="10" />
+
+          <label for="LeaseRoyalty_1"
+            >Lease Royalty Percent
+            <span class="tooltiphoverable"
+              >ⓘ<span class="tooltiptext"
+                >The royalty percentage you were granted in your lease.
+                Typically, anywhere from 12.5% (or 1/8) to 25% (or 1/4).</span
+              ></span
+            ></label
+          >
+          <input
+            type="number"
+            id="LeaseRoyalty_1"
+            class="lease-percentage"
+          /><span class="cal-percentage">%</span>
+        </div>
+        <div class="output-section output-1">
+          <h3>Net Royalty Acres</h3>
+          <output type="number" id="Result_1" readonly></output>
+        </div>
+      </div>
+
+      <!-- Calc 2 -->
+      <div
+        class="calculator"
+        onkeyup="Calc_2()"
+        onmousemove="updateGlobals_2()"
+      >
+        <div class="description-section">
+          <h2>Calculate your NMA using NRA</h2>
+          <p class="calc-p calc-2">
+            A Net Mineral Acre is the amount of interest owned by a mineral
+            owner from under the gross acres of a particular parcel or tract of
+            land.
+          </p>
+        </div>
+        <div class="input-section">
+          <label for="NRA_2"
+            >Net Royalty Acres (NRA)
+            <span class="tooltiphoverable"
+              >ⓘ<span class="tooltiptext"
+                >Use the Calculate Net Royalty Acres (NRA) calculator. FYI -
+                this is only for acreage that is currently leased and/or
+                producing.</span
+              ></span
+            ></label
+          >
+
+          <input type="number" id="NRA_2" />
+
+          <label for="LeaseRoyalty_2"
+            >Lease Royalty Percent
+            <span class="tooltiphoverable"
+              >ⓘ<span class="tooltiptext"
+                >The royalty percentage you were granted in your lease.
+                Typically, anywhere from 12.5% (or 1/8) to 25% (or 1/4).</span
+              ></span
+            ></label
+          >
+          <input
+            type="number"
+            id="LeaseRoyalty_2"
+            class="lease-percentage"
+          /><span class="cal-percentage">%</span>
+        </div>
+        <div class="output-section output-2">
+          <h3>Net Mineral Acres</h3>
+          <output type="number" id="Result_2" readonly></output>
+        </div>
+      </div>
+
+      <!-- Calc 3 -->
+      <div class="calculator" onkeyup="Calc_3()">
+        <div class="description-section">
+          <h2>Calculate your DOI using NMA</h2>
+          <p class="calc-p calc-3">
+            Division of Interest (DOI) is your percentage of ownership in a unit
+            that an Operator has formed. This number is used to verify you are
+            receiving the correct amount of royalties. It can vary from well to
+            well and unit to unit.
+          </p>
+        </div>
+        <div class="input-section">
+          <label for="NMA_3"
+            >Net Mineral Acres (NMA)
+            <span class="tooltiphoverable"
+              >ⓘ
+              <span class="tooltiptext">
+                Use any of the Calculate Net Mineral Acres (NMA) calculators.
+              </span>
+            </span>
+          </label>
+
+          <input type="number" id="NMA_3" />
+          <label for="UnitSize_3"
+            >Unit Size
+            <span class="tooltiphoverable"
+              >ⓘ
+              <span class="tooltiptext">
+                Could be found on your drilling permit that is on your
+                <a
+                  href="https://venergymomentum.com/posts/quick-links-state-by-state-oil-and-gas-gis-mapping-applications-for-public-use/"
+                  >state's oil and gas GIS site</a
+                >.
+              </span>
+            </span>
+          </label>
+          <input type="number" id="UnitSize_3" />
+          <label for="LeaseRoyalty_3"
+            >Lease Royalty Percent
+            <span class="tooltiphoverable"
+              >ⓘ
+              <span class="tooltiptext">
+                The royalty percentage you were granted in your lease.
+                Typically, anywhere from 12.5% (or 1/8) to 25% (or 1/4).
+              </span>
+            </span>
+          </label>
+          <input
+            type="number"
+            id="LeaseRoyalty_3"
+            class="lease-percentage"
+          /><span class="cal-percentage">%</span>
+        </div>
+        <div class="output-section output-3">
+          <h3>Division of Interest</h3>
+          <output type="number" id="Result_3" readonly></output>
+        </div>
+      </div>
+
+      <!-- Calc 4 -->
+      <div class="calculator mt3rem" onkeyup="Calc_4()">
+        <div class="description-section">
+          <h2>Calculate your NMA using DOI</h2>
+
+          <p class="calc-p calc-4">
+            A Net Mineral Acre is the amount of interest owned by a mineral
+            owner from under the gross acres of a particular parcel or tract of
+            land. Division of Interest is also commonly referred to as 'Net
+            Revenue Interest (NRI)'.
+          </p>
+        </div>
+        <div class="input-section">
+          <label for="DOI_4"
+            >Division of Interest
+            <span class="tooltiphoverable"
+              >ⓘ
+              <span class="tooltiptext">
+                Use the 'Calculate Division of Interest (DOI)' calculator, or
+                can be found on your division order or royalty statement. Also
+                referred to as Net Revenue Interest (NRI).
+              </span>
+            </span>
+          </label>
+
+          <input type="number" id="DOI_4" />
+          <label for="UnitSize_4"
+            >Unit Size
+            <span class="tooltiphoverable"
+              >ⓘ
+              <span class="tooltiptext">
+                Could be found on your drilling permit that is on your
+                <a
+                  href="https://venergymomentum.com/posts/quick-links-state-by-state-oil-and-gas-gis-mapping-applications-for-public-use/"
+                  >state's oil and gas GIS site</a
+                >.
+              </span>
+            </span>
+          </label>
+          <input type="number" id="UnitSize_4" />
+          <label for="LeaseRoyalty_4"
+            >Lease Royalty Percent
+            <span class="tooltiphoverable"
+              >ⓘ
+              <span class="tooltiptext">
+                The royalty percentage you were granted in your lease.
+                Typically, anywhere from 12.5% (or 1/8) to 25% (or 1/4).
+              </span>
+            </span>
+          </label>
+          <input
+            type="number"
+            id="LeaseRoyalty_4"
+            class="lease-percentage"
+          /><span class="cal-percentage">%</span>
+        </div>
+        <div class="output-section output-4">
+          <h3>Net Mineral Acres</h3>
+          <output type="number" id="Result_4" readonly></output>
+        </div>
+      </div>
+
+      <!-- Calc 5 -->
+      <div class="calculator mt3rem" onkeyup="Calc_5()">
+        <div class="description-section">
+          <h2>Calculate your DOI using NRA</h2>
+          <p class="calc-p calc-5">
+            Division of Interest (DOI) is your percentage of ownership in a unit
+            that an Operator has formed. This number is used to verify you are
+            receiving the correct amount of royalties. It can vary from well to
+            well and unit to unit. Division of Interest is also commonly
+            referred to as 'Net Revenue Interest (NRI)'.
+          </p>
+        </div>
+        <div class="input-section">
+          <label for="NRA_5"
+            >Net Royalty Acres (NRA)
+            <span class="tooltiphoverable"
+              >ⓘ
+              <span class="tooltiptext">
+                Use the 'Calculate Net Royalty Acres (NRA)' calculator
+              </span>
+            </span>
+          </label>
+
+          <input type="number" id="NRA_5" />
+
+          <label for="Unit_Size_5"
+            >Unit Size
+            <span class="tooltiphoverable"
+              >ⓘ
+              <span class="tooltiptext">
+                Could be found on your drilling permit that is on your
+                <a
+                  href="https://venergymomentum.com/posts/quick-links-state-by-state-oil-and-gas-gis-mapping-applications-for-public-use/"
+                  >state's oil and gas GIS site</a
+                >.
+              </span>
+            </span>
+          </label>
+          <input type="number" id="Unit_Size_5" />
+        </div>
+        <div class="output-section output-5">
+          <h3>Division of Interest</h3>
+          <output type="number" id="Result_5" readonly></output>
+        </div>
+      </div>
+
+      <!-- Calc 6 -->
+      <div class="calculator m3rem" onkeyup="Calc_6()">
+        <div class="description-section">
+          <h2>Calculate your NRA using DOI</h2>
+          <p class="calc-p calc-6">
+            A Net Royalty Acres is a Net Mineral Acres that is subject to an
+            oil, gas, and mineral lease and has a royalty percentage granted and
+            provided for within that lease. Division of Interest is also
+            commonly referred to as 'Net Revenue Interest (NRI)'.
+          </p>
+        </div>
+        <div class="input-section">
+          <label for="DOI_6"
+            >Division of Interest (DOI)
+            <span class="tooltiphoverable"
+              >ⓘ
+              <span class="tooltiptext">
+                Use the 'Calculate Division of Interest (DOI)' calculator, or
+                can be found on your division order or royalty statement. Also
+                referred to as Net Revenue Interest (NRI).
+              </span>
+            </span>
+          </label>
+
+          <input type="number" id="DOI_6" />
+
+          <label for="Unit_Size_6"
+            >Unit Size
+            <span class="tooltiphoverable"
+              >ⓘ
+              <span class="tooltiptext">
+                Could be found on your drilling permit that is on your
+                <a
+                  href="https://venergymomentum.com/posts/quick-links-state-by-state-oil-and-gas-gis-mapping-applications-for-public-use/"
+                  >state's oil and gas GIS site</a
+                >.
+              </span>
+            </span>
+          </label>
+          <input type="number" id="Unit_Size_6" />
+        </div>
+        <div class="output-section output-6">
+          <h3>Net Royalty Acres</h3>
+          <output type="number" id="Result_6" readonly></output>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
